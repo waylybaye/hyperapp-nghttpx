@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 RUN apk add --no-cache nghttp2 openssl ca-certificates
 
 ENV FRONTEND=0.0.0.0,8443
