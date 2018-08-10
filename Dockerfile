@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.8
 RUN apk add --no-cache nghttp2 openssl ca-certificates
 
 ENV FRONTEND=*,443
@@ -9,4 +9,4 @@ ENV OPTIONS=""
 EXPOSE 443
 VOLUME /certs/
 
-CMD nghttpx --http2-proxy -f $FRONTEND -b $BACKEEND $OPTIONS /certs/${DOMAIN}.key /certs/${DOMAIN}.crt
+CMD nghttpx --http2-proxy -f"${FRONTEND}" -b$BACKEEND $OPTIONS /certs/${DOMAIN}.key /certs/${DOMAIN}.crt
