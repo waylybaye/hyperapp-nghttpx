@@ -9,4 +9,4 @@ ENV OPTIONS=""
 EXPOSE 443
 VOLUME /certs/
 
-CMD nghttpx --http2-proxy -f $FRONTEND -b $BACKEEND $OPTIONS /certs/${DOMAIN}.key /certs/${DOMAIN}.crt
+CMD nghttpx --http2-proxy -f"${FRONTEND}" -b$BACKEEND $OPTIONS /certs/${DOMAIN}.key /certs/${DOMAIN}.crt
